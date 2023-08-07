@@ -4,6 +4,7 @@
     <div class="faq">
         <h2>Frequently Asked Questions</h2>
         <ul class="faq-list">
+        
             <li>
                 <h3>How do I choose the right cycle size for myself?</h3>
                 <p>Selecting the correct cycle size involves considering your height and inseam measurements. Check our size chart or consult with our experts to find the perfect fit for you.</p>
@@ -48,6 +49,11 @@
         </ul>
     </div>
 
-    <!-- Link to your CSS file -->
+   
+   <!-- Link to your CSS file -->
     <link href="faq-style.css" rel="stylesheet" />
+    <!-- Link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link to your custom JavaScript file -->
+    <script src="faq-script.js"></script>
 </asp:Content>

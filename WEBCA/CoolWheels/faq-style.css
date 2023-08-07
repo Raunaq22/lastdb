@@ -1,37 +1,58 @@
-﻿/* Style for the FAQ container */
+﻿/* Add your custom styles here */
 .faq {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+    max-width: 800px; /* Increase the width of the container */
+    margin: 0 auto;
 }
 
-    /* Style for the FAQ heading */
     .faq h2 {
-        font-size: 24px;
+        text-align: center;
         margin-bottom: 20px;
+        font-size: 42px;
+        font-weight: bold;
+        font-family: 'Your Desired Font', sans-serif; /* Add your desired Google Font here */
     }
 
-/* Style for the list of FAQ items */
 .faq-list {
-    list-style-type: disc; /* Use bullets for the list items */
-    margin-left: 30px; /* Add indentation for the list items */
+    list-style: none;
+    padding: 0;
+    counter-reset: faq-counter; /* Reset the counter for the faq-list */
 }
 
-    /* Style for each FAQ item */
     .faq-list li {
-        margin-bottom: 20px;
+        margin-bottom: 30px; /* Increase the margin to add more space between questions */
+        position: relative; /* Create a relative position for the li element */
+        padding-left: 40px; /* Create space for the bulletins */
     }
 
-        /* Style for the question heading */
         .faq-list li h3 {
+            cursor: pointer;
+            background-color: #f2f2f2;
+            padding: 15px; /* Increase the padding to increase the width of questions */
             font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
         }
 
-        /* Style for the answer text */
+            .faq-list li h3:before {
+                counter-increment: faq-counter; /* Increment the counter for each question */
+                content: counter(faq-counter) ". "; /* Add a dot after the numerical bullet */
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .faq-list li h3:after {
+                content: "\25BC"; /* Unicode for down arrow */
+                margin-left: 10px;
+            }
+
+        .faq-list li.open h3:after {
+            content: "\25B2"; /* Unicode for up arrow */
+        }
+
         .faq-list li p {
+            display: none;
+            padding: 10px;
             font-size: 16px;
-            margin-bottom: 20px;
-            line-height: 1.6;
         }

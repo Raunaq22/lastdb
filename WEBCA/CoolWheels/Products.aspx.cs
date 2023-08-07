@@ -14,6 +14,12 @@ namespace CoolWheels
            
         }
 
+        protected void YourPurchasesButton_Click(object sender, EventArgs e)
+        { 
+            Response.Redirect("Purchases.aspx");
+        }
+
+
         protected void BuyMountainBike_Click(object sender, EventArgs e)
         {
             BuyProduct("Rail 9.7 Gen2", 7289.10m);

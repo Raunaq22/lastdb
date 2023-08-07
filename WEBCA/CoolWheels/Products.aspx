@@ -7,7 +7,9 @@
 
 <div class="featured-products">
 
-    <h2>Featured Products</h2>
+    <h2>Featured Products
+<asp:Button ID="YourPurchasesButton" runat="server" OnClick="YourPurchasesButton_Click" CssClass="icon-button" />
+        </h2>
     <div class="product">
     <img src="Images/bikeM.jpg" alt="Mountain Bike" />
     <h3>Rail 9.7 Gen2</h3>
@@ -103,8 +105,22 @@
     <p>Total Cost: <asp:Label ID="totalCostLabel" runat="server"></asp:Label></p>
 </div>
 
+    <div id="messageDiv" class="hidden-message">
+    <p id="messageText"></p>
+</div>
+
     <script>
-        
+        function showMessage(message) {
+            var messageDiv = document.getElementById("messageDiv");
+            var messageText = document.getElementById("messageText");
+
+            messageText.innerText = message;
+            messageDiv.style.display = "block";
+
+            setTimeout(function () {
+                messageDiv.style.display = "none";
+            }, 3000); 
+        }
     </script>
 
 </asp:Content>
